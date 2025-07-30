@@ -1,0 +1,75 @@
+2025-07-30 16:59:17,437 - catscan.main - INFO - CatSCAN v2.0 starting with debug logging enabled
+2025-07-30 16:59:17,438 - catscan.main - DEBUG - Platform: Windows, Python: 3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:43:28) [MSC v.1934 32 bit (Intel)]
+2025-07-30 16:59:17,438 - catscan.main - DEBUG - Command line args: {'debug': False, 'log_file': 'LOG_FILE', 'no_banner': False}
+2025-07-30 16:59:17,438 - catscan.ui.console - DEBUG - Displaying CatSCAN banner
+2025-07-30 16:59:20,445 - catscan.ui.console - INFO - Banner displayed
+2025-07-30 16:59:20,445 - catscan.main - INFO - Starting new scan session
+2025-07-30 16:59:20,445 - catscan.auth.config - DEBUG - Getting configuration
+2025-07-30 16:59:20,445 - catscan.auth.config - INFO - Found configuration in environment variables
+2025-07-30 16:59:20,446 - catscan.auth.validators - DEBUG - Validating organization name: 'catscan-org-new'
+2025-07-30 16:59:20,446 - catscan.auth.validators - DEBUG - Organization name validated successfully: 'catscan-org-new'
+2025-07-30 16:59:20,446 - catscan.auth.validators - DEBUG - Validating API token format
+2025-07-30 16:59:20,446 - catscan.auth.validators - DEBUG - Token format validated successfully
+2025-07-30 16:59:20,446 - catscan.auth.config - INFO - Using environment variables for org: catscan-org-new
+2025-07-30 16:59:20,450 - catscan.main - INFO - Configuration obtained for org: catscan-org-new
+2025-07-30 16:59:20,450 - catscan.ui.console - DEBUG - Showing scanning panel for organization: catscan-org-new
+2025-07-30 16:59:20,453 - catscan.ui.console - INFO - Scanning panel displayed for org: catscan-org-new
+2025-07-30 16:59:20,453 - catscan.main - INFO - Fetching workspaces for org: catscan-org-new
+2025-07-30 16:59:20,454 - catscan.api.client - DEBUG - API Request: GET https://app.terraform.io/api/v2/organizations/catscan-org-new/workspaces?page[size]=100&page[number]=1
+2025-07-30 16:59:20,454 - catscan.api.client - DEBUG - Using session: True, Timeout: 30s, Max retries: 3
+2025-07-30 16:59:20,454 - catscan.api.client - DEBUG - Rate limiter acquired for request to https://app.terraform.io/api/v2/organizations/catscan-org-new/workspaces?page[size]=100&page[number]=1
+2025-07-30 16:59:21,021 - catscan.api.client - DEBUG - API Response: 200 from https://app.terraform.io/api/v2/organizations/catscan-org-new/workspaces?page[size]=100&page[number]=1 (attempt 1)
+2025-07-30 16:59:21,024 - catscan.main - INFO - Found 2 workspaces to process
+2025-07-30 16:59:21,030 - catscan.main - INFO - Starting parallel processing with 10 workers
+2025-07-30 16:59:21,032 - catscan.scanner.workspace - INFO - Processing workspace: prod (ID: ws-uhqBVWeNVT2ZSi2Y)
+2025-07-30 16:59:21,032 - catscan.scanner.workspace - INFO - Processing workspace: dev (ID: ws-Eah9yX43toBQi1US)
+2025-07-30 16:59:21,032 - catscan.api.client - DEBUG - API Request: GET https://app.terraform.io/api/v2/workspaces/ws-uhqBVWeNVT2ZSi2Y/current-state-version
+2025-07-30 16:59:21,032 - catscan.api.client - DEBUG - API Request: GET https://app.terraform.io/api/v2/workspaces/ws-Eah9yX43toBQi1US/current-state-version
+2025-07-30 16:59:21,032 - catscan.api.client - DEBUG - Using session: True, Timeout: 30s, Max retries: 3
+2025-07-30 16:59:21,032 - catscan.api.client - DEBUG - Using session: True, Timeout: 30s, Max retries: 3
+2025-07-30 16:59:21,032 - catscan.api.client - DEBUG - Rate limiter acquired for request to https://app.terraform.io/api/v2/workspaces/ws-uhqBVWeNVT2ZSi2Y/current-state-version
+2025-07-30 16:59:21,032 - catscan.api.client - DEBUG - Rate limiter acquired for request to https://app.terraform.io/api/v2/workspaces/ws-Eah9yX43toBQi1US/current-state-version
+2025-07-30 16:59:21,844 - catscan.api.client - DEBUG - API Response: 200 from https://app.terraform.io/api/v2/workspaces/ws-Eah9yX43toBQi1US/current-state-version (attempt 1)
+2025-07-30 16:59:21,845 - catscan.scanner.workspace - DEBUG - Found state URL for workspace dev: https://app.terraform.io/api/state-versions/sv-wDi5NKPaDPmW6B3Q/hosted_state
+2025-07-30 16:59:22,461 - catscan.scanner.state - DEBUG - Extracting state from response (Content-Type: application/octet-stream)
+2025-07-30 16:59:22,461 - catscan.scanner.state - DEBUG - Attempting to extract state from ZIP file
+2025-07-30 16:59:22,461 - catscan.scanner.state - DEBUG - Not a valid ZIP file, will try JSON parsing
+2025-07-30 16:59:22,461 - catscan.scanner.state - DEBUG - Attempting to parse response as JSON
+2025-07-30 16:59:22,461 - catscan.scanner.state - DEBUG - Successfully extracted state data
+2025-07-30 16:59:22,461 - catscan.scanner.state - DEBUG - Parsing state data structure
+2025-07-30 16:59:22,461 - catscan.scanner.state - DEBUG - Detected simple state format with top-level resources
+2025-07-30 16:59:22,461 - catscan.scanner.state - DEBUG - Parsed state data: found 1 resources across 1 types
+2025-07-30 16:59:22,461 - catscan.scanner.resources - DEBUG - Formatting summary for 1 resources across 1 types
+2025-07-30 16:59:22,462 - catscan.scanner.resources - DEBUG - Formatted summary: aws_instance(1)
+2025-07-30 16:59:22,462 - catscan.scanner.workspace - INFO - Workspace dev processed successfully: 1 resources in 1 types
+2025-07-30 16:59:22,462 - catscan.scanner.workspace - DEBUG - Resource breakdown for dev: {'aws_instance': 1}
+2025-07-30 16:59:23,412 - catscan.api.client - DEBUG - API Response: 200 from https://app.terraform.io/api/v2/workspaces/ws-uhqBVWeNVT2ZSi2Y/current-state-version (attempt 1)
+2025-07-30 16:59:23,412 - catscan.scanner.workspace - DEBUG - Found state URL for workspace prod: https://app.terraform.io/api/state-versions/sv-wv18ZxxK6BTex2AS/hosted_state
+2025-07-30 16:59:23,686 - catscan.scanner.state - DEBUG - Extracting state from response (Content-Type: application/octet-stream)
+2025-07-30 16:59:23,686 - catscan.scanner.state - DEBUG - Attempting to extract state from ZIP file
+2025-07-30 16:59:23,686 - catscan.scanner.state - DEBUG - Not a valid ZIP file, will try JSON parsing
+2025-07-30 16:59:23,686 - catscan.scanner.state - DEBUG - Attempting to parse response as JSON
+2025-07-30 16:59:23,686 - catscan.scanner.state - DEBUG - Successfully extracted state data
+2025-07-30 16:59:23,687 - catscan.scanner.state - DEBUG - Parsing state data structure
+2025-07-30 16:59:23,687 - catscan.scanner.state - DEBUG - Detected simple state format with top-level resources
+2025-07-30 16:59:23,687 - catscan.scanner.state - DEBUG - Parsed state data: found 0 resources across 0 types
+2025-07-30 16:59:23,687 - catscan.scanner.workspace - WARNING - No resources found in state for workspace: prod
+2025-07-30 16:59:23,693 - catscan.main - INFO - Scan completed: 1 successful, 1 errors, 1 total resources
+2025-07-30 16:59:23,694 - catscan.storage.history - INFO - Saving scan results for org: catscan-org-new (2 workspaces)
+2025-07-30 16:59:23,694 - catscan.storage.history - DEBUG - History directory ensured at: C:\Users\simon\.catscan_history
+2025-07-30 16:59:23,695 - catscan.storage.history - DEBUG - Writing scan data to: C:\Users\simon\.catscan_history\scan_20250730_165923.json
+2025-07-30 16:59:23,695 - catscan.storage.history - INFO - Scan results saved to: scan_20250730_165923.json
+2025-07-30 16:59:23,696 - catscan.storage.history - DEBUG - Loaded existing scan index with 30 entries
+2025-07-30 16:59:23,696 - catscan.storage.history - INFO - Trimmed scan index from 31 to 30 entries
+2025-07-30 16:59:23,696 - catscan.storage.history - DEBUG - Updating scan index
+2025-07-30 16:59:23,697 - catscan.storage.history - DEBUG - Starting cleanup of old scan files
+2025-07-30 16:59:23,697 - catscan.storage.history - DEBUG - Valid files to keep: 31
+2025-07-30 16:59:23,697 - catscan.storage.history - DEBUG - Removing old scan file: scan_20250707_213830.json
+2025-07-30 16:59:23,697 - catscan.storage.history - INFO - Cleaned up 1 old scan files
+2025-07-30 16:59:23,697 - catscan.storage.history - INFO - Scan results saved successfully
+2025-07-30 16:59:23,699 - catscan.main - INFO - Scan results saved to history
+2025-07-30 16:59:23,699 - catscan.ui.menus - DEBUG - Showing post-scan menu for org: catscan-org-new, has_data: True
+2025-07-30 16:59:31,858 - catscan.ui.menus - INFO - User selected menu option: p
+2025-07-30 16:59:36,200 - catscan.ui.menus - INFO - User selected menu option: q
+2025-07-30 16:59:36,201 - catscan.main - INFO - User chose to quit
+2025-07-30 16:59:36,201 - catscan.main - INFO - CatSCAN shutting down
