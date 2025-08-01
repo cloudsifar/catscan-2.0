@@ -30,7 +30,7 @@ def print_banner():
 ║   ╚█████╔╝██║░░██║░░░██║░░░░░░░░░██████╔╝╚█████╔╝██║░░██║██║░╚███║                   ║
 ║   ░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░░░░░░░╚═════╝░░╚════╝░╚═╝░░╚═╝╚═╝░░╚══╝                   ║
 ║                                                                                      ║
-║              /\_ _/\                Terraform Infrastructure Scanner v{VERSION}            ║
+║              /\_ _/\                Terraform Infrastructure Scanner v2.0            ║
 ║             (  o.o  )    ╭─────╮                                                     ║
 ║              )==Y==(     │ ╭─╮ │    ┌─────────────────────────────────────────────┐  ║
 ║             /       \    │ │ │ │    │   Cloud Resource Discovery & Visualization  │  ║
