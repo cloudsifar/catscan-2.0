@@ -1,4 +1,3 @@
-
 # Python
 __pycache__/
 *.py[cod]
@@ -49,6 +48,14 @@ logs/
 htmlcov/
 .tox/
 test_ui_module.py
+
+# Demo files
+demo_catscan.py
+demo_catscan_perfect.py
+demo_mode.ps1
+demo_mode.sh
+run_clean_demo.ps1
+DEMO_*.md
 
 # OS
 .DS_Store
